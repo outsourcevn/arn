@@ -1,0 +1,1733 @@
+﻿
+@{
+    ViewBag.Title = "ShopVn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .section.no-margin .column, .section.no-margin-v .column {
+        margin-bottom: 0;
+    }
+    .no-margin-h .one.column {
+        width: 100%;
+    }
+    .no-margin-h .column {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .one.column {
+        width: 98%;
+    }
+    .column, .columns {
+        float: left;
+        margin: 0 1% 40px;
+    }
+    .controllers-container {
+     padding-left: 300px;
+    }
+    .woocommerce ul.products.col-4 {
+        text-align: center;
+    }
+    .woocommerce .products ul, .woocommerce ul.products {
+        margin: 0 0 1em;
+        padding: 0;
+        list-style: none;
+        clear: both;
+    }
+    .woocommerce #content div.product .woocommerce-tabs, .woocommerce #content div.product .woocommerce-tabs ul.tabs::after, .woocommerce #content div.product div.thumbnails a.first, .woocommerce #content div.product div.thumbnails::after, .woocommerce .cart-collaterals::after, .woocommerce .col2-set::after, .woocommerce .woocommerce-pagination ul.page-numbers::after, .woocommerce div.product .woocommerce-tabs, .woocommerce div.product .woocommerce-tabs ul.tabs::after, .woocommerce div.product div.thumbnails a.first, .woocommerce div.product div.thumbnails::after, .woocommerce ul.products, .woocommerce ul.products li.first, .woocommerce ul.products::after, .woocommerce-page #content div.product .woocommerce-tabs, .woocommerce-page #content div.product .woocommerce-tabs ul.tabs::after, .woocommerce-page #content div.product div.thumbnails a.first, .woocommerce-page #content div.product div.thumbnails::after, .woocommerce-page .cart-collaterals::after, .woocommerce-page .col2-set::after, .woocommerce-page .woocommerce-pagination ul.page-numbers::after, .woocommerce-page div.product .woocommerce-tabs, .woocommerce-page div.product .woocommerce-tabs ul.tabs::after, .woocommerce-page div.product div.thumbnails a.first, .woocommerce-page div.product div.thumbnails::after, .woocommerce-page ul.products, .woocommerce-page ul.products li.first, .woocommerce-page ul.products::after {
+        clear: both;
+    }
+    .column_column ul {
+        margin: -10px 0px 10px 0px;
+        font-size: 14px;
+        line-height: 21px;
+    }
+    .column_column ul, .column_column ol, .the_content_wrapper ul, .the_content_wrapper ol {
+        color: #737E86;
+    }
+    .column_column ul, .column_column ol, .column_visual ul, .column_visual ol, .mfn-acc ul, .mfn-acc ol, .ui-tabs-panel ul, .ui-tabs-panel ol, .the_content_wrapper ul, .the_content_wrapper ol {
+        margin: 0 0 15px 30px;
+        font-size: 15px;
+        line-height: 21px;
+    }
+    ul {
+        list-style: none outside;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    .woocommerce ul.products.col-4 li.product:nth-child(4n+1) {
+    clear: both;
+    }
+    .woocommerce .products_wrapper ul.products.col-4 li.product {
+        display: inline-block;
+        float: none;
+        width: 22% !important;
+    }
+    .woocommerce ul.products.col-4 li.product {
+        width: 23% !important;
+    }
+    .woocommerce ul.products li.product {
+        width: 18% !important;
+        margin: 0 1% 20px !important;
+        clear: none;
+    }
+    .woocommerce ul.products li.product {
+        width: 31.3% !important;
+        margin: 0 1% 20px !important;
+        clear: none;
+    }
+    .product-container-custom-layout-one {
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, 0.15);
+    }
+    .product-container-custom-layout-one {
+        padding: 12px;
+        height: auto;
+        position: relative;
+    }
+    img.scale-with-grid, #Content img {
+        max-width: 100%;
+        height: auto;
+    }
+    .woocommerce ul.products li.product a img, .woocommerce-page ul.products li.product a img, .woocommerce ul.products li.product a:hover img, .woocommerce-page ul.products li.product a:hover img {
+        -webkit-box-shadow: 0px 0px 0px;
+        box-shadow: 0px 0px 0px;
+        margin: 0;
+    }
+    .woocommerce ul.products li.product a img {
+        background-color: white;
+    }
+    .woocommerce ul.products li.product a img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 0 1em;
+        box-shadow: none;
+    }
+    .woocommerce img, .woocommerce-page img {
+        height: auto;
+        max-width: 100%;
+    }
+    .woocommerce ul.products li.product .product-container-custom-layout-one .product-image-layout-one {
+        height: 133px;
+        min-height: 136px;
+        max-height: 138px;
+    }
+    .product-image-layout-one {
+        width: 54%;
+        margin-top: 55px !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .product-container-custom-layout-one .product_label {
+        display: block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        color: white;
+        min-width: 100px;
+        height: 50px;
+    }
+    .product-price-layout-one {
+        float: left;
+        font-size: 20px;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-bottom: 7px;
+        padding-right: 10px;
+        position: absolute;
+        background-color: #ffffff;
+    }
+    .product-price-layout-one {
+        background-color: rgba(255, 255, 255, 0.4);
+        box-sizing: border-box;
+        position: relative !important;
+        width: 100%;
+        padding: 5px 0px !important;
+    }
+    .product-container-custom-layout-one .add-to-cart-layout-one {
+     margin-top: 13px;
+    }
+        .add-to-cart-layout-one {
+    }
+        .add-to-cart-layout-one {
+        text-align: center;
+    }
+    .no-margin-h .one.column {
+        width: 100%;
+    }
+    .no-margin-h .column {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .one.column {
+        width: 98%;
+    }
+   
+    .controllers-container {
+     padding-left: 0px !important;
+    }   
+        .woocommerce ul.products li.product h3 {
+        padding: 0px;
+        margin: 0;
+        font-size: 1.7em;
+        padding-top: 8px !important;
+        color: #000000;
+        line-height: 16px;
+    }
+    .woocommerce ul.products li.product h3 {
+        padding: .5em 0;
+        margin: 0;
+        font-size: 18px !important;
+        font-weight: 300 !important;
+    }
+    .woocommerce ul.products li.product h3, .woocommerce-page ul.products li.product h4 {
+        margin-bottom: 5px;
+    }
+    .woocommerce ul.products li.product h3 {
+        padding: .5em 0;
+        margin: 0;
+        font-size: 1em;
+    }
+    .page .section .column h3 {
+        display: block;
+        line-height: 100%;
+        margin-bottom: 10px;
+    }
+    h3 {
+        margin-bottom: 5px;
+        font-weight: 100;
+    }
+    h3 {
+        font-size: 40px;
+        line-height: 42px;
+    }
+    h3 {
+        font-family: "Roboto", Arial, Tahoma, sans-serif;
+        font-weight: 300;
+    }
+    h3, h3 a, h3 a:hover {
+        color: #646464;
+    }
+    h3 {
+        margin-bottom: 15px;
+    }
+    .product-container-main-name-price {
+        height: 40px;
+    }
+    .product-name-layout-one {
+        padding-left: 0px;
+        font-size: 18px;
+        padding-top: 0px;
+        text-align: center;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+    .woocommerce img, .woocommerce-page img {
+        height: auto;
+        max-width: 100%;
+    }
+</style>
+<div class="entry-content" itemprop="mainContentOfPage">
+    <div style="padding-top:40px; padding-bottom:10px; background-color:" class="section  no-margin-h no-margin-v ">
+        <div class="section_wrapper clearfix">
+            <div class="items_group clearfix">
+                <div class="column one column_visual ">
+                    <h2 style="font-weight: 200; text-align: center;">
+                        <span style="font-size: 40px;">Bộ Điều Khiển</span><br>
+                        <span style="font-size: 20px; font-weight: 300;">Chọn Ít Nhất Một Bộ Điều Khiển Nhà Thông Minh</span>
+                    </h2>
+                </div>
+                <div class="column one column_divider ">
+                    <hr style="margin: 0 auto 20px;" class="no_line">
+                </div>
+
+                <div class="column one column_column controllers-container">
+                    <div style="" class="column_attr">
+                        <div class="woocommerce columns-4">
+                            <div class="products_wrapper isotope_wrapper">
+                                <div class="woocommerce columns-4">
+                                    <div class="products_wrapper isotope_wrapper">
+                                        <ul class="products grid col-4">
+                                            @foreach (var item in ViewBag.control)
+                                            {
+                                                var link = "/product/" + Configs.unicodeToNoMark(item.product_name)+"-"+item.product_id;
+                                                link = "/products/detail?id=" + item.product_id;
+                                                <li class="first post-19889 product type-product status-publish has-post-thumbnail product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-controllers product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us  instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                    <a href="@link" class="woocommerce-LoopProduct-link">
+                                                    </a><a href="@link">
+
+                                                    </a><div class="product-container-custom-layout-one">
+                                                        <a href="@link">
+                                                            <div class="product-price-layout-one">
+
+                                                                <span class="price price-recipes"><span class="woocommerce-Price-amount amount">@*<span class="woocommerce-Price-currencySymbol">@String.Format("{0:n0}", @item.product_price_public)</span>&nbsp vnd*@</span></span>
+                                                            </div>
+
+                                                            @*<div class="product_label ">
+                                                                <div class="product_label_box">
+                                                                    <span>New</span>
+                                                                </div>
+                                                            </div>*@
+                                                            <div class="product-image-layout-one">
+                                                                <img src="@item.product_photo" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="Zipatile+ces" title="Zipatile+ces"  style="height:126px;width:250px;">
+                                                            </div>
+
+                                                            <div class="product-container-main-name-price">
+                                                                <div class="product-name-layout-one">
+
+                                                                    <h3>@item.product_name</h3>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="product-description-layout-one">
+                                                                <span class="tX20307">
+                                                                    @*@item.product_name*@
+                                                                </span>
+                                                            </div>
+
+                                                        </a><div class="add-to-cart-layout-one">
+                                                            <a href="@link">
+
+                                                            </a>
+                                                            @*<input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">*@
+
+                                                                <a href="@link" class="btn btn-info">Chi Tiết</a>
+                                                                <a href="/Partner/List?product_id=@item.product_id" class="btn btn-success">Mua Ngay</a>
+                                                        </div>
+                                                    </div>
+
+                                                </li>
+                                            }
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column one column_divider">
+                    <div class="hr_wide "><hr></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding-top:40px; padding-bottom:10px; background-color:" class="section  no-margin-h no-margin-v ">
+        <div class="section_wrapper clearfix">
+            <div class="items_group clearfix">
+                <div class="column one column_visual ">
+                    <h2 style="font-weight: 200; text-align: center;">
+                        <span style="font-size: 40px;">Phụ Kiện</span><br>
+                        <span style="font-size: 20px; font-weight: 300;">Mở rộng Zipato Smart Home với các phụ kiện</span>
+                    </h2>
+                </div>
+                <div class="column one column_divider ">
+                    <hr style="margin: 0 auto 20px;" class="no_line">
+                </div>
+
+                <div class="column one column_column accessoires-container">
+                    <div style="" class="column_attr">
+                        <div class="woocommerce columns-4">
+                            <div class="products_wrapper isotope_wrapper">
+                                <div class="woocommerce columns-4">
+                                    <div class="products_wrapper isotope_wrapper">
+                                        <ul class="products grid col-4">
+                                            @foreach (var item in ViewBag.acc)
+                                            {
+                                                var link = "/product/" + Configs.unicodeToNoMark(item.product_name)+"-"+item.product_id;
+                                                link = "/products/detail?id=" + item.product_id;
+                                                <li class="first post-18149 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us  instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                    <a href="@link" class="woocommerce-LoopProduct-link">
+                                                    </a><a href="@link">
+
+                                                    </a><div class="product-container-custom-layout-one">
+                                                        <a href="@link">
+                                                            <div class="product-price-layout-one">
+
+                                                                <span class="price price-recipes"><span class="woocommerce-Price-amount amount">@*<span class="woocommerce-Price-currencySymbol">@String.Format("{0:n0}", @item.product_price_public)</span>&nbsp;vnd*@</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                            </div>
+
+                                                            <div class="product_label hidden">
+                                                                <div class="product_label_box">
+                                                                    <span></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-image-layout-one">
+                                                                <img src="@item.product_photo" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="Zipatile+ces" title="Zipatile+ces" style="height:126px;width:250px;">
+                                                            </div>
+
+                                                            <div class="product-container-main-name-price">
+                                                                <div class="product-name-layout-one">
+
+                                                                    <h3>@item.product_name</h3>
+                                                                </div>
+                                                            </div>
+
+                                                            @*<div class="product-description-layout-one">
+                                                                <span class="tX20272">Easy to use Valve controller that cuts water or gas by leak detection</span>
+                                                            </div>*@
+
+                                                        </a><div class="add-to-cart-layout-one">
+                                                            <a href="@link">
+
+                                                            </a>
+                                                            @*<input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">*@
+
+                                                                <a href="@link" class="btn btn-info">Chi Tiết</a>
+                                                                <a href="/Partner/List?product_id=@item.product_id" class="btn btn-success">Mua Ngay</a>
+                                                        </div>
+                                                    </div>
+
+                                                </li>
+                                            }
+                                            @*<li class="last post-15992 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us first instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/mini-keypad-rfid" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/mini-keypad-rfid">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/mini-keypad-rfid">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;59,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2016/04/wt-rfid-Zipato-Z-Wave-RFID-KeypadKeyTag-02-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="wt-rfid-Zipato-Z-Wave-RFID-Keypad+KeyTag-02" title="wt-rfid-Zipato-Z-Wave-RFID-Keypad+KeyTag-02" srcset="https://www.zipato.com/wp-content/uploads/2016/04/wt-rfid-Zipato-Z-Wave-RFID-KeypadKeyTag-02-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2016/04/wt-rfid-Zipato-Z-Wave-RFID-KeypadKeyTag-02-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2016/04/wt-rfid-Zipato-Z-Wave-RFID-KeypadKeyTag-02-768x768.jpg 768w, https://www.zipato.com/wp-content/uploads/2016/04/wt-rfid-Zipato-Z-Wave-RFID-KeypadKeyTag-02-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2016/04/wt-rfid-Zipato-Z-Wave-RFID-KeypadKeyTag-02-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2016/04/wt-rfid-Zipato-Z-Wave-RFID-KeypadKeyTag-02-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2016/04/wt-rfid-Zipato-Z-Wave-RFID-KeypadKeyTag-02-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2016/04/wt-rfid-Zipato-Z-Wave-RFID-KeypadKeyTag-02-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2016/04/wt-rfid-Zipato-Z-Wave-RFID-KeypadKeyTag-02-600x600.jpg 600w, https://www.zipato.com/wp-content/uploads/2016/04/wt-rfid-Zipato-Z-Wave-RFID-KeypadKeyTag-02.jpg 1000w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Mini RFiD Keypad</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20282">Combines RFID and Z-Wave protocol for access control, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/mini-keypad-rfid">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/mini-keypad-rfid" rel="nofollow" data-country_shop="" data-add-to-cart="15992" data-product_id="15992" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="18319" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="post-15999 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us last instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/rfid-key-tag" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/rfid-key-tag">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/rfid-key-tag">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;3,92</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2016/04/rfidtagkey-RFiD-Keyta-Dark-grey-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="rfidtagkey-RFiD-Keyta-Dark-grey" title="rfidtagkey-RFiD-Keyta-Dark-grey" srcset="https://www.zipato.com/wp-content/uploads/2016/04/rfidtagkey-RFiD-Keyta-Dark-grey-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2016/04/rfidtagkey-RFiD-Keyta-Dark-grey-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2016/04/rfidtagkey-RFiD-Keyta-Dark-grey-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2016/04/rfidtagkey-RFiD-Keyta-Dark-grey-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2016/04/rfidtagkey-RFiD-Keyta-Dark-grey-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2016/04/rfidtagkey-RFiD-Keyta-Dark-grey-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2016/04/rfidtagkey-RFiD-Keyta-Dark-grey-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2016/04/rfidtagkey-RFiD-Keyta-Dark-grey.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>RFID Key Tag</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20284">Sleek, modern RFID key fob</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/rfid-key-tag">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/rfid-key-tag" rel="nofollow" data-country_shop="" data-add-to-cart="15999" data-product_id="15999" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="18400" data-attribute_pa_color="blk" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="first post-16002 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us  instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/micro-module-switch-single" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/micro-module-switch-single">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/micro-module-switch-single">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;59,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Single-600x6001-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="Micro Module Switch Single" title="Micro Module Switch Single 1" srcset="https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Single-600x6001-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Single-600x6001-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Single-600x6001-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Single-600x6001-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Single-600x6001-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Single-600x6001-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Single-600x6001-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Single-600x6001.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Micro Module Switch Single</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20286">Controls power consumption for one load, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/micro-module-switch-single">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/micro-module-switch-single" rel="nofollow" data-country_shop="" data-add-to-cart="16002" data-product_id="16002" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="18226" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="last post-16005 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us first instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/micro-module-switch-double" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/micro-module-switch-double">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/micro-module-switch-double">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;59,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Double-600x6001-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="Micro Module Switch Double" title="Micro Module Switch Double 1" srcset="https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Double-600x6001-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Double-600x6001-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Double-600x6001-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Double-600x6001-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Double-600x6001-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Double-600x6001-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Double-600x6001-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2015/09/Micro-Module-Switch-Double-600x6001.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Micro Module Switch Double</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20288">Controls power consumption for two loads, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/micro-module-switch-double">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/micro-module-switch-double" rel="nofollow" data-country_shop="" data-add-to-cart="16005" data-product_id="16005" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="18235" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="post-16015 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us last instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/micro-module-motor-controller" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/micro-module-motor-controller">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/micro-module-motor-controller">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;59,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2015/05/Zipato-Micromodule-Motor-Controller-250x179.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="Zipato-Micromodule-Motor-Controller" title="Zipato-Micromodule-Motor-Controller" srcset="https://www.zipato.com/wp-content/uploads/2015/05/Zipato-Micromodule-Motor-Controller-250x179.jpg 250w, https://www.zipato.com/wp-content/uploads/2015/05/Zipato-Micromodule-Motor-Controller-100x72.jpg 100w, https://www.zipato.com/wp-content/uploads/2015/05/Zipato-Micromodule-Motor-Controller-204x146.jpg 204w, https://www.zipato.com/wp-content/uploads/2015/05/Zipato-Micromodule-Motor-Controller-50x36.jpg 50w, https://www.zipato.com/wp-content/uploads/2015/05/Zipato-Micromodule-Motor-Controller-105x75.jpg 105w, https://www.zipato.com/wp-content/uploads/2015/05/Zipato-Micromodule-Motor-Controller-80x57.jpg 80w, https://www.zipato.com/wp-content/uploads/2015/05/Zipato-Micromodule-Motor-Controller.jpg 550w" sizes="(max-width: 250px) 100vw, 250px" height="179" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Micro Module Motor Controller</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20292">Controls curtain, roller shutter and other electrical motors, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/micro-module-motor-controller">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/micro-module-motor-controller" rel="nofollow" data-country_shop="" data-add-to-cart="16015" data-product_id="16015" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="18247" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="first post-16018 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us  instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/multisensor-duo" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/multisensor-duo">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/multisensor-duo">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;47,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Duo-600x6002-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="Multisensor Duo" title="Multisensor Duo 1" srcset="https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Duo-600x6002-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Duo-600x6002-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Duo-600x6002-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Duo-600x6002-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Duo-600x6002-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Duo-600x6002-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Duo-600x6002-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Duo-600x6002.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Multisensor Duo</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20293">Detects motion, measures temperature levels, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/multisensor-duo">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/multisensor-duo" rel="nofollow" data-country_shop="" data-add-to-cart="16018" data-product_id="16018" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="18385" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="last post-16021 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us first instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/multisensor-trio" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/multisensor-trio">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/multisensor-trio">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;49,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Trio-600x6001-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="Multisensor Trio" title="Multisensor Trio 1" srcset="https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Trio-600x6001-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Trio-600x6001-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Trio-600x6001-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Trio-600x6001-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Trio-600x6001-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Trio-600x6001-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Trio-600x6001-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Trio-600x6001.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Multisensor Trio</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20294">Detects closed/opened status of your windows and doors, measures temperature and illuminance levels, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/multisensor-trio">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/multisensor-trio" rel="nofollow" data-country_shop="" data-add-to-cart="16021" data-product_id="16021" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="18295" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="post-16024 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us last instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/doorwindow-sensor" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/doorwindow-sensor">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/doorwindow-sensor">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;44,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2015/09/Door-Window-Sensor-600x6001-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="Door/Window Sensor" title="Door/Window Sensor 1" srcset="https://www.zipato.com/wp-content/uploads/2015/09/Door-Window-Sensor-600x6001-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2015/09/Door-Window-Sensor-600x6001-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2015/09/Door-Window-Sensor-600x6001-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2015/09/Door-Window-Sensor-600x6001-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2015/09/Door-Window-Sensor-600x6001-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2015/09/Door-Window-Sensor-600x6001-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2015/09/Door-Window-Sensor-600x6001-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2015/09/Door-Window-Sensor-600x6001.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Door/Window Sensor</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20295">Detects the opened/closed status of doors or windows, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/doorwindow-sensor">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/doorwindow-sensor" rel="nofollow" data-country_shop="" data-add-to-cart="16024" data-product_id="16024" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="18361" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="first post-16026 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us  instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/ir-extender" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/ir-extender">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/ir-extender">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;79,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2015/09/IR-Controller-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="IR-Controller" title="IR-Controller" srcset="https://www.zipato.com/wp-content/uploads/2015/09/IR-Controller-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2015/09/IR-Controller-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2015/09/IR-Controller-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2015/09/IR-Controller-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2015/09/IR-Controller-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2015/09/IR-Controller-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2015/09/IR-Controller-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2015/09/IR-Controller.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>IR extender</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20296">Controls IR-enabled equipment, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/ir-extender">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/ir-extender" rel="nofollow" data-country_shop="" data-add-to-cart="16026" data-product_id="16026" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="18349" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="last post-16027 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us first instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/multisensor-quad" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/multisensor-quad">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/multisensor-quad">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;59,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Quad-600x6001-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="Multisensor Quad" title="Multisensor Quad 1" srcset="https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Quad-600x6001-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Quad-600x6001-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Quad-600x6001-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Quad-600x6001-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Quad-600x6001-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Quad-600x6001-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Quad-600x6001-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2015/09/Multisensor-Quad-600x6001.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Multisensor Quad</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20297">Detects motion, closed/opened status of your windows and doors, measures temperature and illuminance levels, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/multisensor-quad">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/multisensor-quad" rel="nofollow" data-country_shop="" data-add-to-cart="16027" data-product_id="16027" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="18307" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="post-16082 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us last instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/keyfob-5-remote" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/keyfob-5-remote">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/keyfob-5-remote">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;59,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2015/09/Keyfob-5-Remote-600x6001-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="Keyfob-5-Remote-600x600" title="Keyfob-5-Remote-600x600" srcset="https://www.zipato.com/wp-content/uploads/2015/09/Keyfob-5-Remote-600x6001-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2015/09/Keyfob-5-Remote-600x6001-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2015/09/Keyfob-5-Remote-600x6001-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2015/09/Keyfob-5-Remote-600x6001-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2015/09/Keyfob-5-Remote-600x6001-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2015/09/Keyfob-5-Remote-600x6001-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2015/09/Keyfob-5-Remote-600x6001-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2015/09/Keyfob-5-Remote-600x6001.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Keyfob 5 Remote</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20299">Controls lighting groups and AV equipment, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/keyfob-5-remote">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/keyfob-5-remote" rel="nofollow" data-country_shop="" data-add-to-cart="16082" data-product_id="16082" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="17948" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="first post-16084 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us  instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/flood-multisensor-3-in-1" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/flood-multisensor-3-in-1">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/flood-multisensor-3-in-1">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;59,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2015/09/Flood-Multisensor-3-in-1-600x6001-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="Flood-Multisensor-3-in-1-600x600" title="Flood-Multisensor-3-in-1-600x600" srcset="https://www.zipato.com/wp-content/uploads/2015/09/Flood-Multisensor-3-in-1-600x6001-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2015/09/Flood-Multisensor-3-in-1-600x6001-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2015/09/Flood-Multisensor-3-in-1-600x6001-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2015/09/Flood-Multisensor-3-in-1-600x6001-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2015/09/Flood-Multisensor-3-in-1-600x6001-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2015/09/Flood-Multisensor-3-in-1-600x6001-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2015/09/Flood-Multisensor-3-in-1-600x6001-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2015/09/Flood-Multisensor-3-in-1-600x6001.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Flood multisensor 3 in 1</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20300">Detects flood, measures humidity and temperature levels, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/flood-multisensor-3-in-1">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/flood-multisensor-3-in-1" rel="nofollow" data-country_shop="" data-add-to-cart="16084" data-product_id="16084" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="18259" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="last post-16088 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us first instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/multisound-indoor-siren" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/multisound-indoor-siren">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/multisound-indoor-siren">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;79,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2015/09/Indoor-Siren-600x6001-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="Indoor-Siren-600x600" title="Indoor-Siren-600x600" srcset="https://www.zipato.com/wp-content/uploads/2015/09/Indoor-Siren-600x6001-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2015/09/Indoor-Siren-600x6001-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2015/09/Indoor-Siren-600x6001-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2015/09/Indoor-Siren-600x6001-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2015/09/Indoor-Siren-600x6001-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2015/09/Indoor-Siren-600x6001-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2015/09/Indoor-Siren-600x6001-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2015/09/Indoor-Siren-600x6001.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Multisound indoor siren</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20301">Enhance your home security with multi-sound indoor siren, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/multisound-indoor-siren">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/multisound-indoor-siren" rel="nofollow" data-country_shop="" data-add-to-cart="16088" data-product_id="16088" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="18271" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="post-16090 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us last instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/smoke-sensor" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/smoke-sensor">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/smoke-sensor">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;59,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2015/09/Smoke-Sensor-600x600-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="Smoke-Sensor-600x600" title="Smoke-Sensor-600x600" srcset="https://www.zipato.com/wp-content/uploads/2015/09/Smoke-Sensor-600x600-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2015/09/Smoke-Sensor-600x600-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2015/09/Smoke-Sensor-600x600-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2015/09/Smoke-Sensor-600x600-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2015/09/Smoke-Sensor-600x600-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2015/09/Smoke-Sensor-600x600-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2015/09/Smoke-Sensor-600x600-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2015/09/Smoke-Sensor-600x600.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Smoke sensor</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20302">Prevents disasters by reporting potential fires, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/smoke-sensor">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/smoke-sensor" rel="nofollow" data-country_shop="" data-add-to-cart="16090" data-product_id="16090" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="18283" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="first post-16095 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us  instock taxable shipping-taxable purchasable product-type-simple">
+
+                                                <a href="https://www.zipato.com/product/ip-camera" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/ip-camera">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/ip-camera">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;99,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2015/09/Indoor-IP-Camera-600x6001-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="Indoor-IP-Camera-600x600" title="Indoor-IP-Camera-600x600" srcset="https://www.zipato.com/wp-content/uploads/2015/09/Indoor-IP-Camera-600x6001-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2015/09/Indoor-IP-Camera-600x6001-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2015/09/Indoor-IP-Camera-600x6001-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2015/09/Indoor-IP-Camera-600x6001-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2015/09/Indoor-IP-Camera-600x6001-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2015/09/Indoor-IP-Camera-600x6001-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2015/09/Indoor-IP-Camera-600x6001-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2015/09/Indoor-IP-Camera-600x6001.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Indoor IP Camera</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20303">HD Indoor Camera, Wireless and cloud connectivity</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/ip-camera">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="340" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="/shop?country=at&amp;add-to-cart=16095" rel="nofollow" data-country_shop="" data-add-to-cart="16095" data-product_id="16095" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart  product_type_simple" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="last post-19875 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us first instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/micro-module-energy-meter" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/micro-module-energy-meter">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/micro-module-energy-meter">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;89,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2016/02/ph-pab01-Zipato-Micromodule-Energy-Meter-03-250x198.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="ph-pab01-Zipato-Micromodule-Energy-Meter-03" title="ph-pab01-Zipato-Micromodule-Energy-Meter-03" srcset="https://www.zipato.com/wp-content/uploads/2016/02/ph-pab01-Zipato-Micromodule-Energy-Meter-03-250x198.jpg 250w, https://www.zipato.com/wp-content/uploads/2016/02/ph-pab01-Zipato-Micromodule-Energy-Meter-03-100x79.jpg 100w, https://www.zipato.com/wp-content/uploads/2016/02/ph-pab01-Zipato-Micromodule-Energy-Meter-03-768x610.jpg 768w, https://www.zipato.com/wp-content/uploads/2016/02/ph-pab01-Zipato-Micromodule-Energy-Meter-03-1024x813.jpg 1024w, https://www.zipato.com/wp-content/uploads/2016/02/ph-pab01-Zipato-Micromodule-Energy-Meter-03-184x146.jpg 184w, https://www.zipato.com/wp-content/uploads/2016/02/ph-pab01-Zipato-Micromodule-Energy-Meter-03-50x40.jpg 50w, https://www.zipato.com/wp-content/uploads/2016/02/ph-pab01-Zipato-Micromodule-Energy-Meter-03-95x75.jpg 95w, https://www.zipato.com/wp-content/uploads/2016/02/ph-pab01-Zipato-Micromodule-Energy-Meter-03-600x476.jpg 600w, https://www.zipato.com/wp-content/uploads/2016/02/ph-pab01-Zipato-Micromodule-Energy-Meter-03.jpg 1163w" sizes="(max-width: 250px) 100vw, 250px" height="198" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Micro Module Energy Meter</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20274">Controls power consumption of two electric loads, with Z-Wave module</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/micro-module-energy-meter">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/micro-module-energy-meter" rel="nofollow" data-country_shop="" data-add-to-cart="19875" data-product_id="19875" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="19877" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="post-24186 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us last instock taxable shipping-taxable purchasable product-type-simple">
+
+                                                <a href="https://www.zipato.com/product/micro-usb-to-ethernet-adapter" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/micro-usb-to-ethernet-adapter">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/micro-usb-to-ethernet-adapter">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;29,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2016/07/ln-RTL8152-Zipato-Micro-USB-to-Ethernet-Adapter-02-250x187.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="ln-RTL8152 - Zipato Micro USB to Ethernet Adapter 02" title="ln-RTL8152 - Zipato Micro USB to Ethernet Adapter 02" srcset="https://www.zipato.com/wp-content/uploads/2016/07/ln-RTL8152-Zipato-Micro-USB-to-Ethernet-Adapter-02-250x187.jpg 250w, https://www.zipato.com/wp-content/uploads/2016/07/ln-RTL8152-Zipato-Micro-USB-to-Ethernet-Adapter-02-100x75.jpg 100w, https://www.zipato.com/wp-content/uploads/2016/07/ln-RTL8152-Zipato-Micro-USB-to-Ethernet-Adapter-02-768x574.jpg 768w, https://www.zipato.com/wp-content/uploads/2016/07/ln-RTL8152-Zipato-Micro-USB-to-Ethernet-Adapter-02-1024x766.jpg 1024w, https://www.zipato.com/wp-content/uploads/2016/07/ln-RTL8152-Zipato-Micro-USB-to-Ethernet-Adapter-02-195x146.jpg 195w, https://www.zipato.com/wp-content/uploads/2016/07/ln-RTL8152-Zipato-Micro-USB-to-Ethernet-Adapter-02-50x37.jpg 50w, https://www.zipato.com/wp-content/uploads/2016/07/ln-RTL8152-Zipato-Micro-USB-to-Ethernet-Adapter-02-600x449.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="187" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Micro USB to Ethernet Adapter</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20303">Micro USB to Ethernet Adapter for ZipaTile</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/micro-usb-to-ethernet-adapter">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="92" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="/shop?country=at&amp;add-to-cart=24186" rel="nofollow" data-country_shop="" data-add-to-cart="24186" data-product_id="24186" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart  product_type_simple" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="first post-24801 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us  instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/multisensor-quad-dohulite-v2" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/multisensor-quad-dohulite-v2">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/multisensor-quad-dohulite-v2">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;59,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2016/11/vs-zd2301-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="vs-zd2301" title="vs-zd2301" srcset="https://www.zipato.com/wp-content/uploads/2016/11/vs-zd2301-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2016/11/vs-zd2301-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2016/11/vs-zd2301-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2016/11/vs-zd2301-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2016/11/vs-zd2301-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2016/11/vs-zd2301-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2016/11/vs-zd2301-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2016/11/vs-zd2301.jpg 410w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Multisensor QUAD – DOHULITE v2</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20305">Detects opened/closed status of doors or windows, measures temperature, humidity and illuminance levels, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/multisensor-quad-dohulite-v2">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/multisensor-quad-dohulite-v2" rel="nofollow" data-country_shop="" data-add-to-cart="24801" data-product_id="24801" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="25673" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="last post-25704 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us first instock taxable shipping-taxable purchasable product-type-simple">
+
+                                                <a href="https://www.zipato.com/product/outdoor-ip-camera-754gc" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/outdoor-ip-camera-754gc">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/outdoor-ip-camera-754gc">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;79,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label ">
+                                                            <div class="product_label_box">
+                                                                <span>New</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2017/04/754GC_web-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="754GC_web" title="754GC_web" srcset="https://www.zipato.com/wp-content/uploads/2017/04/754GC_web-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2017/04/754GC_web-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2017/04/754GC_web-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2017/04/754GC_web-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2017/04/754GC_web-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2017/04/754GC_web-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2017/04/754GC_web-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2017/04/754GC_web.jpg 500w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>OUTDOOR  IP CAMERA</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20304">HD outdoor IP Camera, wireless and cloud connectivity</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/outdoor-ip-camera-754gc">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="89" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="/shop?country=at&amp;add-to-cart=25704" rel="nofollow" data-country_shop="" data-add-to-cart="25704" data-product_id="25704" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart  product_type_simple" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="post-25745 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us last instock taxable shipping-taxable purchasable product-type-simple">
+
+                                                <a href="https://www.zipato.com/product/indoor-ptz-ip-camera" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/indoor-ptz-ip-camera">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/indoor-ptz-ip-camera">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;109,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label ">
+                                                            <div class="product_label_box">
+                                                                <span>New</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2017/04/631GB_web-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="631GB_web" title="631GB_web" srcset="https://www.zipato.com/wp-content/uploads/2017/04/631GB_web-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2017/04/631GB_web-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2017/04/631GB_web-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2017/04/631GB_web-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2017/04/631GB_web-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2017/04/631GB_web-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2017/04/631GB_web-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2017/04/631GB_web.jpg 500w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>INDOOR PTZ  IP CAMERA</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20303">HD Indoor PTZ Camera, Wireless and cloud connectivity</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/indoor-ptz-ip-camera">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="99" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="/shop?country=at&amp;add-to-cart=25745" rel="nofollow" data-country_shop="" data-add-to-cart="25745" data-product_id="25745" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart  product_type_simple" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="first post-25822 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us  instock taxable shipping-taxable purchasable product-type-simple">
+
+                                                <a href="https://www.zipato.com/product/rfid-card" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/rfid-card">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/rfid-card">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;3,92</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label hidden">
+                                                            <div class="product_label_box">
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2017/04/wt-rfidtagcard-wht_1-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="wt-rfidtagcard-wht_1" title="wt-rfidtagcard-wht_1" srcset="https://www.zipato.com/wp-content/uploads/2017/04/wt-rfidtagcard-wht_1-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2017/04/wt-rfidtagcard-wht_1-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2017/04/wt-rfidtagcard-wht_1-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2017/04/wt-rfidtagcard-wht_1-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2017/04/wt-rfidtagcard-wht_1-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2017/04/wt-rfidtagcard-wht_1-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2017/04/wt-rfidtagcard-wht_1-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2017/04/wt-rfidtagcard-wht_1-600x600.jpg 600w, https://www.zipato.com/wp-content/uploads/2017/04/wt-rfidtagcard-wht_1.jpg 650w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>RFID Card</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20284">Sleek, modern RFID card</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/rfid-card">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="/shop?country=at&amp;add-to-cart=25822" rel="nofollow" data-country_shop="" data-add-to-cart="25822" data-product_id="25822" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart  product_type_simple" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="last post-25880 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us first instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/zipato-bulb2-zwave" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/zipato-bulb2-zwave">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/zipato-bulb2-zwave">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;39,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label ">
+                                                            <div class="product_label_box">
+                                                                <span>New</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="rgbw2 - Zipato Bulb 2 E27" title="rgbw2 - Zipato Bulb 2 E27" srcset="https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Zipato bulb 2 – Z-wave</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20277">Controllable color and intensity of light, energy savers, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/zipato-bulb2-zwave">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/zipato-bulb2-zwave" rel="nofollow" data-country_shop="" data-add-to-cart="25880" data-product_id="25880" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="25882" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="post-26088 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us last instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/smart-smoke-sensor-zwave" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/smart-smoke-sensor-zwave">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/smart-smoke-sensor-zwave">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;39,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label ">
+                                                            <div class="product_label_box">
+                                                                <span>New</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="hm-hs1sa - Smart Smoke Sensor" title="hm-hs1sa - Smart Smoke Sensor" srcset="https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Smart Smoke Sensor – Z-wave</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20302">Prevents disasters by reporting potential fires, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/smart-smoke-sensor-zwave">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/smart-smoke-sensor-zwave" rel="nofollow" data-country_shop="" data-add-to-cart="26088" data-product_id="26088" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="26090" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="first post-26158 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us  instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/mini-energy-dimmer-2" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/mini-energy-dimmer-2">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/mini-energy-dimmer-2">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;59,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label ">
+                                                            <div class="product_label_box">
+                                                                <span>New</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2017/04/mh-p220-Mini-Energy-Dimmer-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="mh-p220 - Mini Energy Dimmer" title="mh-p220 - Mini Energy Dimmer" srcset="https://www.zipato.com/wp-content/uploads/2017/04/mh-p220-Mini-Energy-Dimmer-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2017/04/mh-p220-Mini-Energy-Dimmer-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2017/04/mh-p220-Mini-Energy-Dimmer-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2017/04/mh-p220-Mini-Energy-Dimmer-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2017/04/mh-p220-Mini-Energy-Dimmer-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2017/04/mh-p220-Mini-Energy-Dimmer-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2017/04/mh-p220-Mini-Energy-Dimmer-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2017/04/mh-p220-Mini-Energy-Dimmer.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Mini energy dimmer</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20429">Conserve energy, save money and enjoy pleasent lightning ambient in your automated home.</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/mini-energy-dimmer-2">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/mini-energy-dimmer-2" rel="nofollow" data-country_shop="" data-add-to-cart="26158" data-product_id="26158" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="26160" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="last post-26277 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us first instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/smart-energy-plug-in-switch" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/smart-energy-plug-in-switch">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/smart-energy-plug-in-switch">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;59,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label ">
+                                                            <div class="product_label_box">
+                                                                <span>New</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2017/04/ph-pan16-Smart-Energy-Plug-In-Switch-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="ph-pan16 - Smart Energy Plug In Switch" title="ph-pan16 - Smart Energy Plug In Switch" srcset="https://www.zipato.com/wp-content/uploads/2017/04/ph-pan16-Smart-Energy-Plug-In-Switch-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2017/04/ph-pan16-Smart-Energy-Plug-In-Switch-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2017/04/ph-pan16-Smart-Energy-Plug-In-Switch-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2017/04/ph-pan16-Smart-Energy-Plug-In-Switch-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2017/04/ph-pan16-Smart-Energy-Plug-In-Switch-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2017/04/ph-pan16-Smart-Energy-Plug-In-Switch-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2017/04/ph-pan16-Smart-Energy-Plug-In-Switch-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2017/04/ph-pan16-Smart-Energy-Plug-In-Switch.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Smart Energy Plug In Switch</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20286">Controls your devices which are plugged into a socket. Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/smart-energy-plug-in-switch">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/smart-energy-plug-in-switch" rel="nofollow" data-country_shop="" data-add-to-cart="26277" data-product_id="26277" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="26279" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="post-26347 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us last instock taxable shipping-taxable purchasable product-type-simple">
+
+                                                <a href="https://www.zipato.com/product/zipato-bulb-2-zigbee" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/zipato-bulb-2-zigbee">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/zipato-bulb-2-zigbee">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;35,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label ">
+                                                            <div class="product_label_box">
+                                                                <span>New</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="rgbw2 - Zipato Bulb 2 E27" title="rgbw2 - Zipato Bulb 2 E27" srcset="https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2017/04/rgbw2-Zipato-Bulb-2-E27.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Zipato bulb 2 – ZigBee</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20277">Controllable color and intensity of light, energy savers, ZigBee</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/zipato-bulb-2-zigbee">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="50" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="/shop?country=at&amp;add-to-cart=26347" rel="nofollow" data-country_shop="" data-add-to-cart="26347" data-product_id="26347" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart  product_type_simple" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="first post-26663 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us  instock taxable shipping-taxable purchasable product-type-simple">
+
+                                                <a href="https://www.zipato.com/product/smart-smoke-sensor-zigbee" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/smart-smoke-sensor-zigbee">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/smart-smoke-sensor-zigbee">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;29,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label ">
+                                                            <div class="product_label_box">
+                                                                <span>New</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="hm-hs1sa - Smart Smoke Sensor" title="hm-hs1sa - Smart Smoke Sensor" srcset="https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1sa-Smart-Smoke-Sensor.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Smart Smoke Sensor – ZigBee</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20302">Prevents disasters by reporting potential fires, ZigBee</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/smart-smoke-sensor-zigbee">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="/shop?country=at&amp;add-to-cart=26663" rel="nofollow" data-country_shop="" data-add-to-cart="26663" data-product_id="26663" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart  product_type_simple" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="last post-26791 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us first instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/carbon-monoxide-sensor-zwave" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/carbon-monoxide-sensor-zwave">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/carbon-monoxide-sensor-zwave">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;69,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label ">
+                                                            <div class="product_label_box">
+                                                                <span>New</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="hm-hs1ca - Smart Carbon Monoxide Sensor" title="hm-hs1ca - Smart Carbon Monoxide Sensor" srcset="https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Carbon Monoxide Sensor – Z-wave</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20302">Alerting you about high levels of carbon monoxid, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/carbon-monoxide-sensor-zwave">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/carbon-monoxide-sensor-zwave" rel="nofollow" data-country_shop="" data-add-to-cart="26791" data-product_id="26791" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="26794" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="post-26930 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us last instock taxable shipping-taxable purchasable product-type-simple">
+
+                                                <a href="https://www.zipato.com/product/carbon-monoxide-sensor-zigbee" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/carbon-monoxide-sensor-zigbee">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/carbon-monoxide-sensor-zigbee">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;59,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label ">
+                                                            <div class="product_label_box">
+                                                                <span>New</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="hm-hs1ca - Smart Carbon Monoxide Sensor" title="hm-hs1ca - Smart Carbon Monoxide Sensor" srcset="https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1ca-Smart-Carbon-Monoxide-Sensor.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Carbon Monoxide Sensor –  ZigBee</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20302">Alerting you about high levels of carbon monoxid, ZigBee</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/carbon-monoxide-sensor-zigbee">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="/shop?country=at&amp;add-to-cart=26930" rel="nofollow" data-country_shop="" data-add-to-cart="26930" data-product_id="26930" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart  product_type_simple" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="first post-27056 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us  instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/combustible-gas-sensor-z-wave" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/combustible-gas-sensor-z-wave">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/combustible-gas-sensor-z-wave">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;49,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label ">
+                                                            <div class="product_label_box">
+                                                                <span>New</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="hm-hs1cg - Smart Combustible Gas Sensor" title="hm-hs1cg - Smart Combustible Gas Sensor" srcset="https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Smart Combustible Gas Sensor – Z-wave</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20302">Prevents disasters by reporting potential gas leakage, Z-Wave</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/combustible-gas-sensor-z-wave">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/combustible-gas-sensor-z-wave" rel="nofollow" data-country_shop="" data-add-to-cart="27056" data-product_id="27056" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="27059" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li class="last post-27195 product type-product status-publish has-post-thumbnail product_cat-accessoires product_cat-at product_cat-ba product_cat-be product_cat-bg product_cat-ca product_cat-ch product_cat-cz product_cat-de product_cat-dk product_cat-ee product_cat-es product_cat-fi product_cat-fr product_cat-gb product_cat-gr product_cat-hr product_cat-hu product_cat-ie product_cat-inter product_cat-it product_cat-lt product_cat-lu product_cat-lv product_cat-mt product_cat-nl product_cat-no product_cat-pl product_cat-pt product_cat-ro product_cat-rs product_cat-ru product_cat-se product_cat-si product_cat-sk product_cat-tr product_cat-ua product_cat-us first instock taxable shipping-taxable purchasable product-type-variable has-default-attributes has-children">
+
+                                                <a href="https://www.zipato.com/product/smart-combustible-gas-sensor-zigbee" class="woocommerce-LoopProduct-link">
+                                                </a><a href="https://www.zipato.com/product/smart-combustible-gas-sensor-zigbee">
+
+                                                </a><div class="product-container-custom-layout-one">
+                                                    <a href="https://www.zipato.com/product/smart-combustible-gas-sensor-zigbee">
+                                                        <div class="product-price-layout-one">
+
+                                                            <span class="price price-recipes"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>&nbsp;49,00</span> <small class="woocommerce-price-suffix">-</small></span>
+                                                        </div>
+
+                                                        <div class="product_label ">
+                                                            <div class="product_label_box">
+                                                                <span>New</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-image-layout-one">
+                                                            <img src="https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor-250x250.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="hm-hs1cg - Smart Combustible Gas Sensor" title="hm-hs1cg - Smart Combustible Gas Sensor" srcset="https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor-250x250.jpg 250w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor-100x100.jpg 100w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor-146x146.jpg 146w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor-50x50.jpg 50w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor-80x80.jpg 80w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor-75x75.jpg 75w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor-85x85.jpg 85w, https://www.zipato.com/wp-content/uploads/2017/04/hm-hs1cg-Smart-Combustible-Gas-Sensor.jpg 600w" sizes="(max-width: 250px) 100vw, 250px" height="250" width="250">
+                                                        </div>
+
+                                                        <div class="product-container-main-name-price">
+                                                            <div class="product-name-layout-one">
+
+                                                                <h3>Smart Combustible Gas Sensor – ZigBee</h3>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="product-description-layout-one">
+                                                            <span class="tX20302">Prevents disasters by reporting potential gas leakage, ZigBee</span>
+                                                        </div>
+
+                                                    </a><div class="add-to-cart-layout-one">
+                                                        <a href="https://www.zipato.com/product/smart-combustible-gas-sensor-zigbee">
+
+                                                        </a>
+                                                        <input style="max-width: 70px" step="1" min="0" max="" name="product_id" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric" type="number">
+
+                                                        <a href="https://www.zipato.com/product/smart-combustible-gas-sensor-zigbee" rel="nofollow" data-country_shop="" data-add-to-cart="27195" data-product_id="27195" data-quantity="1" class="button product_type_variable add_to_cart_button  product_type_variable" data-variation_id="27198" data-attribute_pa_frequency="eu" data-stock="in">Add to cart</a>
+                                                    </div>
+                                                </div>
+
+                                            </li>*@
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column one column_divider">
+                    <div class="hr_wide "><hr></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

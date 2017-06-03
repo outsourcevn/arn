@@ -1,0 +1,23 @@
+﻿@model List<Etron.Models.product_img>
+@if (Model != null)
+{
+    if (Model.Count > 0)
+    {
+        foreach (var item in Model)
+        {
+            <div class="column one-third column_icon_box tX10016">
+                <div class="icon_box icon_position_top no_border">
+                    <div class="image_wrapper">
+                        <a href="@item.img_url" class="thumbnail item_maugiapha" target="_blank">
+                            <img src="@item.img_url" alt="" class="scale-with-grid img-responsive" style="width:334px;height:221px;">
+                        </a>
+                    </div>
+                    @*<div class="desc_wrapper">
+                        <h4>Giữ liên lạc với con của bạn</h4>
+                    </div>*@
+                </div>
+            </div>
+        }
+    }
+}
+

@@ -1,0 +1,134 @@
+﻿@model Etron.Models.product
+@{
+    ViewBag.Title = @Model.product_name;
+    ViewBag.Des = @Model.product_des;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="/Content/creative/css/overview.css" rel="stylesheet">
+<!-- #Wrapper -->
+<div id="Wrapper">
+    <!-- #Content -->
+    <div id="Content">
+        <div class="content_wrapper clearfix">
+            <!-- .sections_group -->
+            <div class="sections_group">
+                <div class="entry-content" itemprop="mainContentOfPage">
+                    <!-- SUB MENU -->
+                    <div class="section  no-margin sub_menu_container  column-margin-0px"
+                         style="padding-top:0px; padding-bottom:0px; background-color:">
+                        <div class="section_wrapper clearfix">
+                            <div class="items_group clearfix">
+                                <div class="column one-fourth column_visual breadcrumbs-name">
+                                    <h4 class="tX20499"
+                                        style="text-align: left;">
+                                        Sản Phẩm | @Model.product_name
+                                    </h4>
+                                </div>
+                                @*<div class="column three-fourth column_column breadcrumbs-nav">
+                                    <div class="column_attr align_right" style="">
+                                        <div class="menu-what-is-zipato-container">
+                                            <ul id="submenu_top" class="submenu_top">
+                                                <li id="menu-item-15641"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-15639 current_page_item menu-item-15641">
+                                                    <a href="/whatis/overview">Tổng quan</a>
+                                                </li>
+                                                <li id="menu-item-77"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77">
+                                                    <a href="/whatis/security">Bảo mật</a>
+                                                </li>
+                                                <li id="menu-item-93"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-93">
+                                                    <a href="/whatis/energy">Năng lượng</a>
+                                                </li>
+                                                <li id="menu-item-15268"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15268">
+                                                    <a href="/whatis/comfort">Tiện ích</a>
+                                                </li>
+                                                <li id="menu-item-15281"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15281">
+                                                    <a href="/whatis/health">Sức khỏe</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>*@
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <!-- END SECTION zipatoPrinciples -->
+                    <!-- SECTION comfortScenes -->
+                    <div class="section" id="comfortScenes">
+                        <div class="section-divider triangle down"></div>
+                        <div class="section_wrapper clearfix">
+                            <div class="items_group clearfix">
+                                <div class="column one-third column_image ">
+                                    <div class="image_frame image_item no_link scale-with-grid aligncenter no_border">
+                                        <div class="image_wrapper">
+                                            <img class="scale-with-grid" src="@Model.product_photo" alt="" width="500" height="500" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column two-third column_visual ">
+                                    <h2 class="tX02314">@Model.product_name</h2>
+                                    <h3>
+                                        <span style="font-size: 20px;" class="tX02313">@Model.product_des.</span>
+                                    </h3>
+                                    <div><a href="tel:0911431489" class="btn btn-info">Gọi 0911431489</a>&nbsp;&nbsp;<a href="/Partner/List?product_id=@Model.product_id" class="btn btn-success">Mua Ngay</a></div>
+                                    @*<p class="tX02312">
+                                        Chương trình tạo các lệnh cho một nút để bạn có thể tạo chế độ ưa thích hoặc môi trường của bạn bằng một lần nhấn nút. Ví dụ: chế độ "Welcome Home" có thể tạo ra môi trường chính xác mà bạn mong muốn khi đến nhà với ánh sáng buổi tối, sưởi sàn, nhạc và mành cửa tất cả được điều chỉnh theo các cài đặt mong muốn của bạn. Chế độ để các sự kiện "Đồng hồ báo thức" và chỉ cho giờ 5:00 Am và 9:00 pm bạn thậm chí không cần phải nhấn một nút khi bạn về nhà.
+                                    </p>
+                                    <h2 class="tX02311 h2_title">Lịch và hẹn giờ</h2>
+                                    <h3>
+                                        <span style="font-size: 20px;" class="tX02310">Với lịch trình tiên tiến và tính giờ, Zipato sẽ làm tất cả mọi thứ vì vậy bạn không phải làm gì.</span>
+                                    </h3>
+                                    <p class="tX02309">
+                                        Hàng loạt các lệnh có thể dễ dàng lập trình với một chức năng hẹn giờ. Bạn có thể quyết định khi những sự kiện này sẽ được chạy. Bộ hẹn giờ trong nhà "Đèn ngủ buổi tối" có thể làm giảm màn sáng, điều chỉnh hệ thống sưởi sàn và bật khu vườn và ánh sáng vào. Bộ đếm thời gian này có thể được điều chỉnh bởi chủ nhà để chạy vào lúc 4:30 chiều vào mùa đông và 7 giờ tối vào mùa hè. Hoặc chỉ đơn giản là đặt hẹn giờ vào một thời điểm nhất định trước khi mặt trời lặn để hẹn giờ tự động theo dõi các mùa.
+                                    </p>*@
+                                </div>
+                                <ul class="nav nav-tabs">
+                                    <li class="active" style="border:1px solid;"><a href="#menu1" data-toggle="tab">Hướng Dẫn Sử Dụng</a></li>
+                                    <li><a href="#menu2" style="border:1px solid #00ffff;" data-toggle="tab">Album Ảnh</a></li>
+                                    <li><a href="#menu3" style="border:1px solid #00ffff;" data-toggle="tab">File đính kèm</a></li>                                   
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="menu1" class="tab-pane fade in active">                                        
+                                        <p>@Html.Raw(Model.product_content)</p>
+                                    </div>
+                                    <div id="menu2" class="tab-pane fade">
+                                        <div class="section_wrapper clearfix">
+                                            <div class="items_group clearfix">
+                                                <div class="column one column_visual ">
+                                                    <h2 class="tX20508" style="text-align: center;">Album Ảnh</h2>
+                                                    @*<p style="text-align: center;">
+                                                        <span class="tX20509" style="font-size: 16px;">Truy cập máy ảnh trong nhà hoặc doanh nghiệp của bạn từ xa để xem điều gì đã kích hoạt báo thức qua video trực tuyến thời gian thực. Xem các đoạn video cảnh báo trước và cảnh báo sau khi đăng trên điện thoại di động và máy PC của bạn. Bạn cũng có thể sử dụng tầm nhìn ban đêm để nhìn thấy trong bóng tối.</span>
+                                                    </p>*@
+                                                </div>
+                                                @{Html.RenderAction("LoadPhotoProduct2", "Products", new { id = @Model.product_id });}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="menu3" class="tab-pane fade">
+                                        @{Html.RenderAction("LoadFileProduct2", "Products", new { id = @Model.product_id });}
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="section the_content no_content">
+                        <div class="section_wrapper">
+                            <div class="the_content_wrapper"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- .four-columns - sidebar -->
+
+        </div>
+    </div>
+
+</div><!-- #Wrapper -->
