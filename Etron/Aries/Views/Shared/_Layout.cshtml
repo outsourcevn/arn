@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Công ty TNHH Công Nghệ Aries</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/themes/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="~/Content/themes/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Plugin CSS -->
+    <link href="~/Content/themes/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="~/Content/themes/vendor/mmenu/jquery.mmenu.css" rel="stylesheet" />
+    <link href="~/Content/themes/vendor/slick/slick-theme.css" rel="stylesheet" />
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="~/Content/themes/css/common.css" />
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
+    @*<script type='text/javascript' src='~/Scripts/jquery-1.10.2.min.js'></script>
+    <script type='text/javascript' src='~/Scripts/jquery-1.10.2.js'></script>*@
+</head>
+<body>
+    <nav id="menu-mobile" class="mm-menu mm-horizontal mm-offcanvas">
+        <ul class="mm-list mm-panel mm-opened mm-current" id="mm-0">
+            <li class="item mm-selected"><a href="#">Trang chủ</a></li>
+
+            <li class="item"><a href="gioi-thieu">Giới thiệu</a></li>
+
+            <li class="item"><a href="#">Giải pháp</a></li>
+
+            <li class="item"><a href="#">Công trình</a></li>
+
+            @*<li class="item"><a href="#">Công trình đang thi công</a></li>*@
+
+            <li class="item"><a href="#">Videos</a></li>
+
+            <li class="item"><a href="#">Liên hệ</a></li>
+        </ul>
+    </nav>
+    <div class="wrapper animated fadeIn mm-page mm-slideout">
+        <header class="header">
+            <div class="container">
+                <a href="#menu-mobile" class="navbar-toggle button-menu-mobile">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <h1 class="logo">
+                    <a href="/">
+                        <img src="~/Content/themes/images/logo.png" alt="Logo Etron Smarthome" width="116" height="52">
+                    </a>
+                </h1>
+                <div class="wrap-right">
+                    <ul class="nav nav-pills menu">
+                        <li class="item is-active"><a href="#">Trang chủ</a></li>
+
+                        <li class="item"><a href="gioi-thieu">Giới thiệu</a></li>
+
+                        <li class="item"><a href="giai-phap">Giải pháp</a></li>
+
+                        <li class="item"><a href="#">Công trình</a></li>
+
+                        @*<li class="item"><a href="#">Sản phẩm</a></li>*@
+
+                        <li class="item"><a href="#">Videos</a></li>
+
+                        <li class="item"><a href="#">Liên hệ</a></li>
+                    </ul>
+                    @*<div class="ddOutOfVision" id="msdrpdd20_msddHolder" style="height: 0px; overflow: hidden; position: absolute;">
+                            <select name="select-language" class="select-language js-select-language" onchange="showValue(this.value)" id="msdrpdd20" tabindex="-1">
+                                <option value="vi">Tiếng Việt</option>
+                                <option value="en">English</option>
+                            </select>
+                        </div><div class="dd ddcommon borderRadius" id="msdrpdd20_msdd" tabindex="0" style="width: 96px;"><div class="ddTitle borderRadiusTp"><span class="divider"></span><span class="ddArrow arrowoff"></span><span class="ddTitleText " id="msdrpdd20_title"><span class="ddlabel">Tiếng Việt</span><span class="description" style="display: none;"></span></span></div><input id="msdrpdd20_titleText" type="text" autocomplete="off" class="text shadow borderRadius" style="display: none;"><div class="ddChild ddchild_ border shadow" id="msdrpdd20_child" style="z-index: 9999; display: none; position: absolute; visibility: visible; height: 75px;"><ul><li class="enabled _msddli_ selected"><span class="ddlabel">Tiếng Việt</span><div class="clear"></div></li><li class="enabled _msddli_"><span class="ddlabel">English</span><div class="clear"></div></li></ul></div></div>*@
+                </div>
+            </div>
+        </header>
+        <div>
+            @RenderBody()
+
+        </div>
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4 item">
+                            <h2 class="title">Liên Hệ</h2>
+                            <div class="content-info">
+                                <p>CÔNG TY TNHH CÔNG NGHỆ ARIES</p>
+                                <p>Tầng 1, tòa nhà Lô số B7+B9, ô D21, Khu ĐTM Cầu Giấy, Phường Dịch Vọng Hậu, Quận Cầu Giấy, Tp. Hà Nội, Việt Nam.</p>
+                                <p>
+                                    <a href="tel:0438833366">Phone: (+84) 43 8833366</a>
+                                </p>
+                                <p>
+                                    <a href="mailto:support@ariestechco.com">Email: support@ariestechco.com</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 item">
+                            @*<h2 class="title">Đà Nẵng</h2>
+                                <div class="content-info">
+                                    <p>152 Hàm Nghi, Q.Thanh Khê, Đà Nẵng</p>
+                                    <p>Đại diện: Mr. Lê Trung Can</p>
+                                    <p>Điện thoại: <span class="emphasis">0903 555 931</span></p>
+                                    <p>Email: <a href="mailto:trungcan@etron.com.vn" class="emphasis">trungcan@etron.com.vn</a></p>
+                                </div>*@
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14895.72694812131!2d105.77649593633305!3d21.035417203697147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab4a5e274ded%3A0x27fa4d31a0cef9a9!2zROG7i2NoIFbhu41uZyBI4bqtdSwgQ-G6p3UgR2nhuqV5LCBIYW5vaSwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1496212145262" width="350" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+                        </div>
+                        <div class="col-sm-4 item">
+                            <h2 class="title">Liên Kết</h2>
+                            <div class="content-info">
+                                <p><a href="http://zipato.com.vn">Nhà Thông Minh</a></p>
+                                <p><a href="#">Khóa Điện Tử</a></p>
+                                <p><a href="#">Liên Hệ</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <p class="copyright">© 2017 Copyright <a href="./index.html" class="link">ariestechco.com</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)*@
+    <!-- jQuery -->
+    <script src="~/Content/themes/vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Content/themes/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="~/Content/themes/vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="~/Content/themes/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/themes/vendor/mmenu/jquery.mmenu.all.min.js"></script>
+    <script src="~/Content/themes/vendor/slick/slick.min.js"></script>
+
+    <script type='text/javascript' src='~/Content/themes/js/common.js'></script>
+    <script src="/Content/themes/vendor/pagePiling/jquery.pagepiling.min.js"></script>
+    <script type='text/javascript' src='/Content/themes/js/solution.js'></script>
+</body>
+</html>
