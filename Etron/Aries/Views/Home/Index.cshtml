@@ -68,6 +68,42 @@
 <section class="article-featured">
     <div class="container">
         <div class="row">
+            @if (ViewBag.news != null) { 
+                var count=0;
+               <div class="wrap-title col-md-12">
+                            <a class="title-lg" style="float:left;">
+                                <span>Tin tức sản phẩm</span>
+                            </a>
+                            <a href="/tin-tuc-san-pham-0/1" class="view-all right" style="float:right;">
+                                <i class="icon icon-view-all"></i>
+                                XEM TẤT CẢ
+                            </a>
+               </div>
+                foreach(var item in ViewBag.news){
+                    var link = "/" +Aries.Config.getCatName(item.cat_id) + "/" + Aries.Config.unicodeToNoMark(item.new_title) + "-" + item.id;
+                <article class="col-sm-4 col-xs-6 article wow fadeInUp animated" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                    <div class="article-info">
+                        <a href="@link">
+                            <img class="image" src="@item.new_img" alt="@item.new_title" style="border:1px solid #808080;">
+                        </a>
+                        <h4 class="title">
+                            <a href="@link">@item.new_title</a>
+                        </h4>
+                        <p class="description">
+                            @item.new_des
+                        </p>
+                    </div>
+                </article>
+                    count++;
+                }
+            }
+        </div>
+    </div>
+</section>
+<!-- SECTION ARTICLE FEATURED -->
+<section class="article-featured">
+    <div class="container">
+        <div class="row">
             <article class="col-sm-12 col-xs-6 article wow fadeInUp animated" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                 <div class="wrap-title">
                     <h3 class="title-lg">

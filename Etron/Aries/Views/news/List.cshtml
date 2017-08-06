@@ -1,0 +1,61 @@
+﻿@model PagedList.IPagedList<Aries.Models.news>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Tin tức sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<!-- Small banner -->
+<section class="banner-small banner-work">
+    <div class="container">
+        <div class="inner">
+            <h2 class="title">Tin Tức Sản Phẩm</h2>
+            <p class="description">
+                Nhà Thông Minh - Khóa Điện Tử
+            </p>
+        </div>
+    </div>
+</section>
+<!-- content -->
+<section class="work">
+    <div class="container">
+        <div class="list-work">
+            @foreach (var item in Model)
+            {
+                var link = "/" + Aries.Config.getCatName(item.cat_id) + "/" + Aries.Config.unicodeToNoMark(item.new_title) + "-" + item.id;
+                <div class="item" style="min-height:420px;min-width:278px;">
+                    <div class="inner">
+                        <a href="@link">
+                            <div class="wrap-image">
+                                <img class="image" src="@item.new_img" alt="@item.new_title" style="border:1px solid #808080;width:259px;height:195px;">
+                                <span class="caption">@item.new_title</span>
+                            </div>
+                            <p class="description">
+                                @item.new_des
+                            </p>
+                        </a>
+                        <a href="@link" class="view-more">Xem tiếp <i class="icon icon-chevron-arrow-right"></i></a>
+                    </div>
+                </div>
+                @*<text>
+                    <div class="col-md-4" style="min-height:550px;float:left;display:block;position:relative;">
+                        <div class="box-entry archive-post">
+                            <div class="box-entry-inner">
+                                <img src="@item.new_img" class="img-responsive" />
+                                <div class="entry-details">
+                                    <div class="entry-des">
+                                        <h3><a href="@link">@item.new_title</a></h3>
+                                        <p>@item.new_des</p>
+                                        <a href="@link" class="btn btn-skin">Xem tiếp</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </text>*@
+            }
+        </div>
+    </div>
+</section>
+    

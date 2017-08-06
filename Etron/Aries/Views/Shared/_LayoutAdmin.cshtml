@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Web siêu thị MVC5">
-    <meta name="author" content="Nguyen Van Nam">
-    <title>@ViewBag.Title | Trang quản trị thiết bị công nghệ</title>
+    <meta name="description" content="Aries">
+    <meta name="author" content="Aries">
+    <title>@ViewBag.Title | Trang quản trị </title>
     @RenderSection("metatags", false)
     <!-- Bootstrap Core CSS -->
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
@@ -28,7 +28,7 @@
     <!-- jQuery -->
     <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
     @*<link href="~/Scripts/jquery-confirm.min.css" rel="stylesheet" />*@
-    <script src="~/Scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="~/Scripts/bootstrap.min.js"></script>
     <!-- Metis Menu Plugin JavaScript -->
@@ -75,6 +75,14 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     @*@Html.Partial("_MenuAdminPartial")*@
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="/news"><i class="fa fa-home fa-fw"></i> Quản lý tin tức</a>
+                        </li>
+                        <li>
+                            <a href="/users"><i class="fa fa-home fa-fw"></i> Quản lý user</a>
+                        </li>
+                    </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>

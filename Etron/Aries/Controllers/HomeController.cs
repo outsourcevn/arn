@@ -3,13 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using Aries.Models;
 namespace Aries.Controllers
 {
     public class HomeController : Controller
     {
+        private etronEntities db = new etronEntities();
         public ActionResult Index()
         {
+            try
+            {
+                var news = db.news.OrderByDescending(o => o.id).Take(3).ToList();
+                ViewBag.news = news;
+            }
+            catch
+            {
+
+            }
             return View();
         }
 
