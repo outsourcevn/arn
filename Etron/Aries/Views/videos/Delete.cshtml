@@ -1,0 +1,27 @@
+﻿@model Aries.Models.video
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Bạn có chắc chắn xóa???</h3>
+<div>
+    <h4>video</h4>
+    <hr />
+    <div class="dl-horizontal">
+            <h1>@Model.name</h1>
+            <iframe width="500" height="315" src="https://www.youtube.com/embed/@Config.getIdYoutubeVideo(@Model.url)" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Danh sách", "Index")
+        </div>
+    }
+</div>

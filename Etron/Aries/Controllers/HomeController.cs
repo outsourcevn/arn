@@ -15,6 +15,8 @@ namespace Aries.Controllers
             {
                 var news = db.news.OrderByDescending(o => o.id).Take(3).ToList();
                 ViewBag.news = news;
+                var videos = db.videos.OrderByDescending(o => o.id).Take(4).ToList();
+                ViewBag.videos = videos;
             }
             catch
             {

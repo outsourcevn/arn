@@ -19,6 +19,27 @@ namespace Aries
             //Response.Cookies.Add(MyCookie);   
 
         }
+        public static string getIdYoutubeVideo(string url)
+        {
+            try
+            {
+                if (url.Contains("="))
+                {
+                    string[] id = url.Split('=');
+                    return id[id.Length - 1];
+                }
+                else
+                {
+                    string[] id = url.Split('/');
+                    return id[id.Length - 1];
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                return url;
+            }
+        }
         public static string getCookie(string v)
         {
             try
