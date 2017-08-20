@@ -13,6 +13,21 @@ namespace Aries
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapRoute(
+            "gioi thieu",
+            "gioi-thieu",
+            new { controller = "Home", action = "About" }
+          );
+            routes.MapRoute(
+           "giai phap",
+           "giai-phap",
+           new { controller = "Home", action = "Solution" }
+         );
+            routes.MapRoute(
+            "lien he",
+            "lien-he",
+            new { controller = "Home", action = "Contact" }
+          );
+            routes.MapRoute(
                 "chi tiet",
                 "{catname}/{name}-{id}",
                 new { controller = "News", action = "Details", catname = UrlParameter.Optional, name = UrlParameter.Optional, id = UrlParameter.Optional }
@@ -51,16 +66,7 @@ namespace Aries
             "admin/product/list",
             new { controller = "Products", action = "List" }
           );
-            routes.MapRoute(
-            "gioi thieu",
-            "gioi-thieu",
-            new { controller = "Home", action = "About" }
-          );
-            routes.MapRoute(
-           "giai phap",
-           "giai-phap",
-           new { controller = "Home", action = "Solution" }
-         );
+            
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
