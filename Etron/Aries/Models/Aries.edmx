@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="etronModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cats">
+          <Key>
+            <PropertyRef Name="cat_id" />
+          </Key>
+          <Property Name="cat_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cat_name" Type="nvarchar" MaxLength="250" />
+          <Property Name="cat_url" Type="nvarchar" MaxLength="505" />
+          <Property Name="cat_pos" Type="int" />
+          <Property Name="cat_parent_id" Type="int" />
+          <Property Name="lang" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="new_title" Type="nvarchar" MaxLength="505" />
+          <Property Name="new_content" Type="ntext" />
+          <Property Name="new_flug" Type="nvarchar" MaxLength="505" />
+          <Property Name="new_img" Type="nvarchar" MaxLength="500" />
+          <Property Name="cat_id" Type="int" />
+          <Property Name="user_id" Type="nvarchar" MaxLength="128" />
+          <Property Name="quyen_hang" Type="int" />
+          <Property Name="trang_thai" Type="int" />
+          <Property Name="isHot" Type="tinyint" />
+          <Property Name="ngay_tao" Type="datetime" />
+          <Property Name="new_des" Type="nvarchar" MaxLength="505" />
+        </EntityType>
+        <EntityType Name="product_img">
+          <Key>
+            <PropertyRef Name="img_id" />
+          </Key>
+          <Property Name="img_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="img_url" Type="nvarchar" MaxLength="500" />
+          <Property Name="img_title" Type="nvarchar" MaxLength="250" />
+          <Property Name="img_alt" Type="nvarchar" MaxLength="250" />
+          <Property Name="product_id" Type="bigint" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="product_name" Type="nvarchar" MaxLength="255" />
+          <Property Name="product_des" Type="ntext" />
+          <Property Name="product_type" Type="int" />
+          <Property Name="product_new_type" Type="int" />
+          <Property Name="product_price_public" Type="int" />
+          <Property Name="product_photo" Type="nvarchar" MaxLength="250" />
+          <Property Name="product_photo2" Type="nvarchar" MaxLength="250" />
+          <Property Name="product_content" Type="ntext" />
+          <Property Name="product_feature" Type="ntext" />
+          <Property Name="product_technical" Type="ntext" />
+          <Property Name="product_file" Type="nvarchar" MaxLength="205" />
+          <Property Name="updated_date" Type="datetime" />
+          <Property Name="edit_date" Type="datetime" />
+          <Property Name="deleted_date" Type="datetime" />
+          <Property Name="status" Type="bit" />
+          <Property Name="cat_id" Type="int" />
+          <Property Name="orderby" Type="int" />
+          <Property Name="lang" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="pass" Type="nvarchar" MaxLength="50" />
+          <Property Name="permision" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="video">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cat_id" Type="int" />
+          <Property Name="name" Type="nvarchar" MaxLength="501" />
+          <Property Name="des" Type="nvarchar" MaxLength="2501" />
+          <Property Name="url" Type="nvarchar" MaxLength="501" />
+          <Property Name="date_time" Type="datetime" />
+          <Property Name="is_hot" Type="tinyint" />
+        </EntityType>
+        <Association Name="FK_product_img_products">
+          <End Role="products" Type="Self.products" Multiplicity="0..1" />
+          <End Role="product_img" Type="Self.product_img" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="product_img">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="etronModelStoreContainer">
+          <EntitySet Name="cats" EntityType="Self.cats" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="news" EntityType="Self.news" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="product_img" EntityType="Self.product_img" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="products" EntityType="Self.products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="video" EntityType="Self.video" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_product_img_products" Association="Self.FK_product_img_products">
+            <End Role="products" EntitySet="products" />
+            <End Role="product_img" EntitySet="product_img" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="etronModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="cat">
+          <Key>
+            <PropertyRef Name="cat_id" />
+          </Key>
+          <Property Name="cat_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cat_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="cat_url" Type="String" MaxLength="505" FixedLength="false" Unicode="true" />
+          <Property Name="cat_pos" Type="Int32" />
+          <Property Name="cat_parent_id" Type="Int32" />
+          <Property Name="lang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="new_title" Type="String" MaxLength="505" FixedLength="false" Unicode="true" />
+          <Property Name="new_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="new_flug" Type="String" MaxLength="505" FixedLength="false" Unicode="true" />
+          <Property Name="new_img" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="cat_id" Type="Int32" />
+          <Property Name="user_id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="quyen_hang" Type="Int32" />
+          <Property Name="trang_thai" Type="Int32" />
+          <Property Name="isHot" Type="Byte" />
+          <Property Name="ngay_tao" Type="DateTime" Precision="3" />
+          <Property Name="new_des" Type="String" MaxLength="505" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="product_img">
+          <Key>
+            <PropertyRef Name="img_id" />
+          </Key>
+          <Property Name="img_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="img_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="img_title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="img_alt" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="product_id" Type="Int64" />
+          <NavigationProperty Name="product" Relationship="Self.FK_product_img_products" FromRole="product_img" ToRole="products" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="product_des" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="product_type" Type="Int32" />
+          <Property Name="product_new_type" Type="Int32" />
+          <Property Name="product_price_public" Type="Int32" />
+          <Property Name="product_photo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="product_photo2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="product_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="product_feature" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="product_technical" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="product_file" Type="String" MaxLength="205" FixedLength="false" Unicode="true" />
+          <Property Name="updated_date" Type="DateTime" Precision="3" />
+          <Property Name="edit_date" Type="DateTime" Precision="3" />
+          <Property Name="deleted_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="cat_id" Type="Int32" />
+          <Property Name="orderby" Type="Int32" />
+          <Property Name="lang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="product_img" Relationship="Self.FK_product_img_products" FromRole="products" ToRole="product_img" />
+        </EntityType>
+        <EntityType Name="video">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cat_id" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="501" FixedLength="false" Unicode="true" />
+          <Property Name="des" Type="String" MaxLength="2501" FixedLength="false" Unicode="true" />
+          <Property Name="url" Type="String" MaxLength="501" FixedLength="false" Unicode="true" />
+          <Property Name="date_time" Type="DateTime" Precision="3" />
+          <Property Name="is_hot" Type="Byte" />
+        </EntityType>
+        <Association Name="FK_product_img_products">
+          <End Role="products" Type="Self.product" Multiplicity="0..1" />
+          <End Role="product_img" Type="Self.product_img" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="product_img">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="etronEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cats" EntityType="Self.cat" />
+          <EntitySet Name="news" EntityType="Self.news" />
+          <EntitySet Name="product_img" EntityType="Self.product_img" />
+          <EntitySet Name="products" EntityType="Self.product" />
+          <EntitySet Name="videos" EntityType="Self.video" />
+          <AssociationSet Name="FK_product_img_products" Association="Self.FK_product_img_products">
+            <End Role="products" EntitySet="products" />
+            <End Role="product_img" EntitySet="product_img" />
+          </AssociationSet>
+          <EntitySet Name="users" EntityType="etronModel.user" />
+        </EntityContainer>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="permision" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="etronModelStoreContainer" CdmEntityContainer="etronEntities">
+          <EntitySetMapping Name="cats">
+            <EntityTypeMapping TypeName="etronModel.cat">
+              <MappingFragment StoreEntitySet="cats">
+                <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+                <ScalarProperty Name="cat_name" ColumnName="cat_name" />
+                <ScalarProperty Name="cat_url" ColumnName="cat_url" />
+                <ScalarProperty Name="cat_pos" ColumnName="cat_pos" />
+                <ScalarProperty Name="cat_parent_id" ColumnName="cat_parent_id" />
+                <ScalarProperty Name="lang" ColumnName="lang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="news">
+            <EntityTypeMapping TypeName="etronModel.news">
+              <MappingFragment StoreEntitySet="news">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="new_title" ColumnName="new_title" />
+                <ScalarProperty Name="new_content" ColumnName="new_content" />
+                <ScalarProperty Name="new_flug" ColumnName="new_flug" />
+                <ScalarProperty Name="new_img" ColumnName="new_img" />
+                <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="quyen_hang" ColumnName="quyen_hang" />
+                <ScalarProperty Name="trang_thai" ColumnName="trang_thai" />
+                <ScalarProperty Name="isHot" ColumnName="isHot" />
+                <ScalarProperty Name="ngay_tao" ColumnName="ngay_tao" />
+                <ScalarProperty Name="new_des" ColumnName="new_des" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="product_img">
+            <EntityTypeMapping TypeName="etronModel.product_img">
+              <MappingFragment StoreEntitySet="product_img">
+                <ScalarProperty Name="img_id" ColumnName="img_id" />
+                <ScalarProperty Name="img_url" ColumnName="img_url" />
+                <ScalarProperty Name="img_title" ColumnName="img_title" />
+                <ScalarProperty Name="img_alt" ColumnName="img_alt" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="etronModel.product">
+              <MappingFragment StoreEntitySet="products">
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="product_des" ColumnName="product_des" />
+                <ScalarProperty Name="product_type" ColumnName="product_type" />
+                <ScalarProperty Name="product_new_type" ColumnName="product_new_type" />
+                <ScalarProperty Name="product_price_public" ColumnName="product_price_public" />
+                <ScalarProperty Name="product_photo" ColumnName="product_photo" />
+                <ScalarProperty Name="product_photo2" ColumnName="product_photo2" />
+                <ScalarProperty Name="product_content" ColumnName="product_content" />
+                <ScalarProperty Name="product_feature" ColumnName="product_feature" />
+                <ScalarProperty Name="product_technical" ColumnName="product_technical" />
+                <ScalarProperty Name="product_file" ColumnName="product_file" />
+                <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+                <ScalarProperty Name="edit_date" ColumnName="edit_date" />
+                <ScalarProperty Name="deleted_date" ColumnName="deleted_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+                <ScalarProperty Name="orderby" ColumnName="orderby" />
+                <ScalarProperty Name="lang" ColumnName="lang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="videos">
+            <EntityTypeMapping TypeName="etronModel.video">
+              <MappingFragment StoreEntitySet="video">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="des" ColumnName="des" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="date_time" ColumnName="date_time" />
+                <ScalarProperty Name="is_hot" ColumnName="is_hot" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="etronModel.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="permision" ColumnName="permision" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
